@@ -52,9 +52,41 @@ I recommend to use [mobtime](https://mobti.me/) and configure below roles :
 * Write down ideas that emerge in his/he mind and other ideas as well
 
 ### Review
-At the end of the 30 minutes period : 
+At the end of the 60 minutes period : 
 * Each mob presents the new version of the production code
 * Other groups have 2 minutes to identify what is implemented
+
+## Test && Commit || Revert (TCR)
+### (SUPER) Important
+
+Create a branch of your own so you don't push all your commits on the main branch!
+
+### Tool
+Without going too much in detail, here's a little explanation on how the TCR Utility Tool works.
+
+The command must follow the following format, and be executed from the root directory:
+- .\tcr\\**OS**\tcr.exe -b .\\**language**\ -w .\\**language**\ -l **language**
+
+```shell
+./tcr/MacOs/tcr -b java/ -w java/ -t maven
+.\tcr\Windows\tcr.exe -b .\java\ -w .\java\ -l java -t maven
+```
+
+From there, the tool will provide a set of options:
+```shell
+[TCR] Available Options:
+[TCR]   D -> Driver role
+[TCR]   N -> Navigator role
+[TCR]   P -> Turn on/off git auto-push
+[TCR]   Q -> Quit
+[TCR]   ? -> List available options
+```
+
+It's pretty simple:
+- When it's your turn to drive, pick the **Driver role** or press **D**. You will be the driver for the next 5 minutes.
+- Otherwise, pick the **Navigator role** or press **N**. You will constantly pull commits and have an up-to-date codebase.
+
+Please, make sure to follow your rotation and have only one driver at a time.
 
 ### Reflect
 Take a few minutes to reflect and ask questions :
