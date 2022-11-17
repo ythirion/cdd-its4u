@@ -18,10 +18,14 @@ public class Submarine {
     }
 
     private void méthode2(Instruction instruction) {
-        // FIXME
-        var objet = getObject();
-        var profondeurProfonde = calculerProfondeurProfonde(instruction);
-        object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
+        if (instruction == null) {
+            // TODO return null
+        } else if (instruction != null) {
+            // FIXME
+            var objet = getObject();
+            var profondeurProfonde = calculerProfondeurProfonde(instruction);
+            object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
+        }
     }
 
     public Objet getObject() {
