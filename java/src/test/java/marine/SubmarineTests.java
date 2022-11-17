@@ -15,7 +15,7 @@ class SubmarineTests {
         var instructions = loadInstructions();
         var submarine = new Submarine(0, 0);
 
-        submarine.move(instructions);
+        submarine.méthode1(instructions);
 
         assertThat(calculateResult(submarine)).isEqualTo(1690020);
     }

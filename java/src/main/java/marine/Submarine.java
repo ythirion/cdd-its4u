@@ -6,28 +6,28 @@ import java.util.List;
 
 @Getter
 public class Submarine {
-    public Object position;
+    public Object object;
 
     public Submarine(int horizontal, int depth) {
-        this.position = new Position(horizontal, depth);
+        this.object = new Position(horizontal, depth);
     }
 
-    public void move(List<Instruction> instructions) {
-        instructions.forEach(this::move);
+    public void méthode1(List<Instruction> instructions) {
+        instructions.forEach(this::méthode2);
     }
 
-    private void move(Instruction instruction) {
+    private void méthode2(Instruction instruction) {
         if ("down".equals(instruction.text)) {
-            position = getObject().withProfondeur(calculateDepth(instruction));
+            object = getObject().withProfondeur(calculateDepth(instruction));
         } else if ("up".equals(instruction.text)) {
-            position = getObject().withProfondeur(getObject().profondeur - instruction.x);
+            object = getObject().withProfondeur(getObject().profondeur - instruction.x);
         } else {
-            position = getObject().withHorizontal(getObject().horizontal + instruction.x);
+            object = getObject().withHorizontal(getObject().horizontal + instruction.x);
         }
     }
 
     public Position getObject() {
-        return (Position)position;
+        return (Position) object;
     }
 
     private int calculateDepth(Instruction instruction) {
