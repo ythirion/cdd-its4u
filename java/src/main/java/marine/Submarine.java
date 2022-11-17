@@ -2,6 +2,7 @@ package marine;
 
 import lombok.Getter;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
@@ -20,9 +21,9 @@ public class Submarine {
         if ("down".equals(instruction.text)) {
             object = getObject().withProfondeur(calculateDepth(instruction));
         } else if ("up".equals(instruction.text)) {
-            object = getObject().withProfondeur(getObject().profondeur - instruction.x);
+            object = getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
         } else {
-            object = getObject().withHorizontal(getObject().horizontal + instruction.x);
+            object = getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue());
         }
     }
 
@@ -31,6 +32,6 @@ public class Submarine {
     }
 
     private int calculateDepth(Instruction instruction) {
-        return getObject().profondeur + instruction.x;
+        return BigDecimal.valueOf(getObject().profondeur).add(instruction.x).intValue();
     }
 }
