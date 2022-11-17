@@ -84,10 +84,12 @@ public class Submarine {
         return (Objet) object;
     }
 
+    @Deprecated
     private int calculateDepth(Instruction instruction) {
         return BigDecimal.valueOf(getObject().profondeur).add(instruction.x).intValue();
     }
 
+    @Deprecated
     private int calculerProfondeurProfonde(Instruction instruction) {
         return BigDecimal.valueOf(getObject().profondeur).add(instruction.x).intValue();
     }
