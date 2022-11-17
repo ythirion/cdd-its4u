@@ -16,6 +16,6 @@ public class FileUtils {
 
     @SneakyThrows
     public static String[] getInputAsSeparatedLines(String input) {
-        return getInputAsString(input).split("\n");
+        return getInputAsString(input).split("\r\n");
     }
 }
