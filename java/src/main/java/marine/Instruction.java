@@ -6,7 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class Instruction {
-    private final String text;
+    public final String text;
     private final int x;
 
     public static Instruction fromText(String text) {
