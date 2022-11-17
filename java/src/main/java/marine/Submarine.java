@@ -3,29 +3,6 @@ package marine;
 import lombok.Getter;
 import java.math.BigDecimal;
 import java.util.List;
-import lombok.Getter;
-import java.math.BigDecimal;
-import java.util.List;
-import lombok.Getter;
-import java.math.BigDecimal;
-import java.util.List;
-import lombok.Getter;
-import java.math.BigDecimal;
-import java.util.List;
-
-import lombok.AllArgsConstructor;
-import lombok.With;
-import java.util.List;
-import lombok.Getter;
-import java.math.BigDecimal;
-import java.util.List;
-
-import lombok.AllArgsConstructor;
-import lombok.With;
-import java.util.List;
-import lombok.Getter;
-import java.math.BigDecimal;
-import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.With;
@@ -104,4 +81,9 @@ public class Submarine {
     private int calculerProfondeurProfonde(Instruction instruction) {
         return BigDecimal.valueOf(getObject().profondeur).add(instruction.x).intValue();
     }
+
+    @AllArgsConstructor @With
+public static class Objet {
+    public int horizontal, profondeur;
+}
 }
