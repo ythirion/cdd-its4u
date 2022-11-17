@@ -7,6 +7,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Objects;
 
+import static java.lang.System.lineSeparator;
+
 @UtilityClass
 public class FileUtils {
     @SneakyThrows
@@ -16,6 +18,6 @@ public class FileUtils {
 
     @SneakyThrows
     public static String[] getInputAsSeparatedLines(String input) {
-        return getInputAsString(input).split("\r\n");
+        return getInputAsString(input).split(lineSeparator());
     }
 }
