@@ -33,7 +33,18 @@ public class Submarine {
                         for (; ; ) {
                             if (vrai == true) {
                                 var p = calculerProfondeurProfonde(instruction);
-                                return;
+
+                                boolean faux = false;
+                                while (faux) {
+                                    object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
+
+                                    for (; ; ) {
+                                        if (faux == true) {
+                                            var t = calculerProfondeurProfonde(instruction);
+                                            return;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
