@@ -30,7 +30,12 @@ public class Submarine {
                         var profondeurProfonde = calculerProfondeurProfonde(instruction);
                         object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
 
-                        for (; ; ) ;
+                        for (; ; ) {
+                            if (vrai == true) {
+                                var p = calculerProfondeurProfonde(instruction);
+                                return;
+                            }
+                        }
                     }
 
                     // FIXME
