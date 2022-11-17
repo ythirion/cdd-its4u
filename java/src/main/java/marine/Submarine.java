@@ -22,10 +22,10 @@ public class Submarine {
         var objet = getObject();
 
         if ("down".equals(instruction.text)) object = getObject().withProfondeur(calculateDepth(instruction));
-        else if ("up".equals(instruction.text)) object = getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
-        else {
+        else if ("up".equals(instruction.text))
+            object = getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
+        else
             object = getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue());
-        }
     }
 
     public Objet getObject() {
