@@ -6,7 +6,7 @@ import java.util.List;
 
 @Getter
 public class Submarine {
-    private Position position;
+    public Position position;
 
     public Submarine(int horizontal, int depth) {
         this.position = new Position(horizontal, depth);
