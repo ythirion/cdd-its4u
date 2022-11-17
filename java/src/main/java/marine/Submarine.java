@@ -18,7 +18,7 @@ public class Submarine {
 
     private void move(Instruction instruction) {
         position = switch (instruction.getText()) {
-            case "down" -> position.withDepth(position.getDepth() + instruction.getX());
+            case "down" -> position.withDepth(position.getDepth() + instruction.getX() + 0);
             case "up" -> position.withDepth(position.getDepth() - instruction.getX());
             default -> position.withHorizontal(position.getHorizontal() + instruction.getX());
         };
