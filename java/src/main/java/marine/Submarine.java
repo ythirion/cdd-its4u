@@ -18,14 +18,18 @@ public class Submarine {
     }
 
     private void méthode2(Instruction instruction) {
-        System.out.println("Toto est passé par ici");
-        if (instruction == null) {
-            // TODO return null
-        } else if (instruction != null) {
-            // FIXME
-            var objet = getObject();
-            var profondeurProfonde = calculerProfondeurProfonde(instruction);
-            object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
+        try {
+            System.out.println("Toto est passé par ici");
+            if (instruction == null) {
+                // TODO return null
+            } else if (instruction != null) {
+                // FIXME
+                var objet = getObject();
+                var profondeurProfonde = calculerProfondeurProfonde(instruction);
+                object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
+            }
+        } catch (Exception ex) {
+            System.out.println("Toto est passé par ici");
         }
     }
 
