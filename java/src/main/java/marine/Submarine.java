@@ -21,11 +21,7 @@ public class Submarine {
         // FIXME
         var objet = getObject();
 
-        object = "down".equals(instruction.text) ?
-                getObject().withProfondeur(calculateDepth(instruction)) :
-                "up".equals(instruction.text) ?
-                        getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue())
-                        : getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue());
+        object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
     }
 
     public Objet getObject() {
