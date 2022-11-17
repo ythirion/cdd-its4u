@@ -24,9 +24,9 @@ class SubmarineTests {
         return submarine.getObject().profondeur * submarine.getObject().horizontal;
     }
 
-    private List<Instruction> loadInstructions() {
+    private List<Submarine.Instruction> loadInstructions() {
         return Arrays.stream(FileUtils.getInputAsSeparatedLines("submarine.txt"))
-                .map(Instruction::fromText)
+                .map(Submarine.Instruction::fromText)
                 .collect(Collectors.toUnmodifiableList());
     }
 }

@@ -11,8 +11,8 @@ import lombok.With;
 public class Submarine {
     public Object object;
 
-    public Submarine(int horizontal, int depth) {
-        this.object = new Objet(horizontal, depth);
+                                                                                                                                                                                                    public Submarine(int horizontal, int depth) {
+                                                                                                                                                    this.object = new Objet(horizontal, depth);
     }
 
     public void méthode1(List<Instruction> instructions) {
@@ -23,29 +23,39 @@ public class Submarine {
         try {
             try {
                 System.out.println("Toto est passé par ici");
-                if (instruction == null) {
+                                                                                                                                                                    if (instruction == null) {
                     // TODO return null
                 } else if (instruction != null) {
                     boolean vrai = false;
+
+
+
+
+
+
+
+
+
+
                     while (vrai) {
                         var objet = getObject();
                         var profondeurProfonde = calculerProfondeurProfonde(instruction);
                         object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
 
-                        for (; ; ) {
-                            if (vrai == true) {
-                                var p = calculerProfondeurProfonde(instruction);
+                                                                                                        for (; ; ) {
+                                                                                                            if (vrai == true) {
+                                                                                                                var p = calculerProfondeurProfonde(instruction);
 
-                                boolean faux = false;
-                                while (faux) {
-                                    object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
+                                                                                                                boolean faux = false;
+                                                                                                                while (faux) {
+                                                                                                                    object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
 
-                                    for (; ; ) {
-                                        if (faux == true) {
-                                            var t = calculerProfondeurProfonde(instruction);
+                                                                                                                    for (; ; ) {
+                                                                                                                        if (faux == true) {
+                                                                                                                            var t = calculerProfondeurProfonde(instruction);
 
-                                            for (; ; ) {
-                                                if (faux == true) {
+                                                                                                                            for (; ; ) {
+                                                                                                                                if (faux == true) {
                                                     var K = calculerProfondeurProfonde(instruction);
                                                     return;
                                                 }
@@ -85,5 +95,16 @@ public class Submarine {
     @AllArgsConstructor @With
 public static class Objet {
     public int horizontal, profondeur;
+}
+
+    @AllArgsConstructor
+public static class Instruction {
+    public String text;
+    public BigDecimal x;
+
+    public static Instruction fromText(String text) {
+        var split = text.split(" ");
+        return new Instruction(split[0], BigDecimal.valueOf(Integer.parseInt(split[1])));
+    }
 }
 }
