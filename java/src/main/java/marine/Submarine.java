@@ -9,7 +9,7 @@ public class Submarine {
     public Object object;
 
     public Submarine(int horizontal, int depth) {
-        this.object = new Position(horizontal, depth);
+        this.object = new Objet(horizontal, depth);
     }
 
     public void méthode1(List<Instruction> instructions) {
@@ -26,8 +26,8 @@ public class Submarine {
         }
     }
 
-    public Position getObject() {
-        return (Position) object;
+    public Objet getObject() {
+        return (Objet) object;
     }
 
     private int calculateDepth(Instruction instruction) {
