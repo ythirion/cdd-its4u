@@ -21,7 +21,7 @@ class SubmarineTests {
     }
 
     private int calculateResult(Submarine submarine) {
-        return submarine.getPosition().profondeur * submarine.getPosition().horizontal;
+        return submarine.getObject().profondeur * submarine.getObject().horizontal;
     }
 
     private List<Instruction> loadInstructions() {

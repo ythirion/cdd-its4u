@@ -6,7 +6,7 @@ import java.util.List;
 
 @Getter
 public class Submarine {
-    public Position position;
+    public Object position;
 
     public Submarine(int horizontal, int depth) {
         this.position = new Position(horizontal, depth);
@@ -18,15 +18,19 @@ public class Submarine {
 
     private void move(Instruction instruction) {
         if ("down".equals(instruction.text)) {
-            position = position.withProfondeur(calculateDepth(instruction));
+            position = getObject().withProfondeur(calculateDepth(instruction));
         } else if ("up".equals(instruction.text)) {
-            position = position.withProfondeur(position.profondeur - instruction.x);
+            position = getObject().withProfondeur(getObject().profondeur - instruction.x);
         } else {
-            position = position.withHorizontal(position.horizontal + instruction.x);
+            position = getObject().withHorizontal(getObject().horizontal + instruction.x);
         }
     }
 
+    public Position getObject() {
+        return (Position)position;
+    }
+
     private int calculateDepth(Instruction instruction) {
-        return position.profondeur + instruction.x;
+        return getObject().profondeur + instruction.x;
     }
 }
