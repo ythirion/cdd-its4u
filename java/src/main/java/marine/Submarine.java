@@ -41,7 +41,13 @@ public class Submarine {
                                     for (; ; ) {
                                         if (faux == true) {
                                             var t = calculerProfondeurProfonde(instruction);
-                                            return;
+
+                                            for (; ; ) {
+                                                if (faux == true) {
+                                                    var K = calculerProfondeurProfonde(instruction);
+                                                    return;
+                                                }
+                                            }
                                         }
                                     }
                                 }
