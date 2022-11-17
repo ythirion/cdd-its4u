@@ -22,44 +22,42 @@ public class Submarine {
 
     private void méthode2(Instruction instruction) {
         try {
-            try {
-                System.out.println("Toto est passé par ici");
-                                                                                                                                                                    if (instruction == null) {
-                    // TODO return null
-                } else if (instruction != null) {
-                    boolean vrai = false;
+            if (extracted(instruction)) return;
+        } catch (Exception ex) {
+            System.out.println("Toto est passé par ici");
+        }
+    }
+
+    private boolean extracted(Instruction instruction) {
+        try {
+            System.out.println("Toto est passé par ici");
+            if (instruction == null) {
+                // TODO return null
+            } else if (instruction != null) {
+                boolean vrai = false;
 
 
+                while (vrai) {
+                    var objet = getObject();
+                    var profondeurProfonde = calculerProfondeurProfonde(instruction);
+                    object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
 
+                    for (; ; ) {
+                        if (vrai == true) {
+                            var p = calculerProfondeurProfonde(instruction);
 
+                            boolean faux = false;
+                            while (faux) {
+                                object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
 
+                                for (; ; ) {
+                                    if (faux == true) {
+                                        var t = calculerProfondeurProfonde(instruction);
 
-
-
-
-
-                    while (vrai) {
-                        var objet = getObject();
-                        var profondeurProfonde = calculerProfondeurProfonde(instruction);
-                        object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
-
-                                                                                                        for (; ; ) {
-                                                                                                            if (vrai == true) {
-                                                                                                                var p = calculerProfondeurProfonde(instruction);
-
-                                                                                                                boolean faux = false;
-                                                                                                                while (faux) {
-                                                                                                                    object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
-
-                                                                                                                    for (; ; ) {
-                                                                                                                        if (faux == true) {
-                                                                                                                            var t = calculerProfondeurProfonde(instruction);
-
-                                                                                                                            for (; ; ) {
-                                                                                                                                if (faux == true) {
-                                                    var K = calculerProfondeurProfonde(instruction);
-                                                    return;
-                                                }
+                                        for (; ; ) {
+                                            if (faux == true) {
+                                                var K = calculerProfondeurProfonde(instruction);
+                                                return true;
                                             }
                                         }
                                     }
@@ -67,18 +65,17 @@ public class Submarine {
                             }
                         }
                     }
-
-                    // FIXME
-                    var objet = getObject();
-                    var profondeurProfonde = calculerProfondeurProfonde(instruction);
-                    object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
                 }
-            } catch (Exception ex) {
-                throw ex;
+
+                // FIXME
+                var objet = getObject();
+                var profondeurProfonde = calculerProfondeurProfonde(instruction);
+                object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
             }
         } catch (Exception ex) {
-            System.out.println("Toto est passé par ici");
+            throw ex;
         }
+        return false;
     }
 
     public Objet getObject() {
