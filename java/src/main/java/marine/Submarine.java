@@ -20,13 +20,13 @@ public class Submarine {
         if ("down".equals(instruction.getText())) {
             position = position.withDepth(calculateDepth(instruction));
         } else if ("up".equals(instruction.getText())) {
-            position = position.withDepth(position.getDepth() - instruction.getX());
+            position = position.withDepth(position.depth - instruction.getX());
         } else {
-            position = position.withHorizontal(position.getHorizontal() + instruction.getX());
+            position = position.withHorizontal(position.horizontal + instruction.getX());
         }
     }
-    
+
     private int calculateDepth(Instruction instruction) {
-        return position.getDepth() + instruction.getX();
+        return position.depth + instruction.getX();
     }
 }
