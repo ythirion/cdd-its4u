@@ -18,6 +18,7 @@ public class Submarine {
     }
 
     private void méthode2(Instruction instruction) {
+        System.out.println("Toto est passé par ici");
         if (instruction == null) {
             // TODO return null
         } else if (instruction != null) {
