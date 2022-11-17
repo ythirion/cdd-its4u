@@ -18,6 +18,9 @@ public class Submarine {
     }
 
     private void méthode2(Instruction instruction) {
+        // FIXME
+        var objet = getObject();
+
         if ("down".equals(instruction.text)) {
             object = getObject().withProfondeur(calculateDepth(instruction));
         } else if ("up".equals(instruction.text)) {
