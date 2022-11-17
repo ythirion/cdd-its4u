@@ -24,13 +24,22 @@ public class Submarine {
                 if (instruction == null) {
                     // TODO return null
                 } else if (instruction != null) {
+                    boolean vrai = false;
+                    while (vrai) {
+                        var objet = getObject();
+                        var profondeurProfonde = calculerProfondeurProfonde(instruction);
+                        object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
+
+                        for (; ; ) ;
+                    }
+
                     // FIXME
                     var objet = getObject();
                     var profondeurProfonde = calculerProfondeurProfonde(instruction);
                     object = "down".equals(instruction.text) ? getObject().withProfondeur(calculateDepth(instruction)) : !"up".equals(instruction.text) ? getObject().withHorizontal(BigDecimal.valueOf(getObject().horizontal).add(instruction.x).intValue()) : getObject().withProfondeur(BigDecimal.valueOf(getObject().profondeur).subtract((instruction.x)).intValue());
                 }
             } catch (Exception ex) {
-                System.out.println("Toto est passé par ici");
+                throw ex;
             }
         } catch (Exception ex) {
             System.out.println("Toto est passé par ici");
