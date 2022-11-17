@@ -7,5 +7,6 @@ import lombok.With;
 @With
 public class Position {
     public final int horizontal;
-    public final int depth;
+    public final int profondeur;
+
 }

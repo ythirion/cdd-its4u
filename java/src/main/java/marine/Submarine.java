@@ -18,15 +18,15 @@ public class Submarine {
 
     private void move(Instruction instruction) {
         if ("down".equals(instruction.getText())) {
-            position = position.withDepth(calculateDepth(instruction));
+            position = position.withProfondeur(calculateDepth(instruction));
         } else if ("up".equals(instruction.getText())) {
-            position = position.withDepth(position.depth - instruction.getX());
+            position = position.withProfondeur(position.profondeur - instruction.getX());
         } else {
             position = position.withHorizontal(position.horizontal + instruction.getX());
         }
     }
 
     private int calculateDepth(Instruction instruction) {
-        return position.depth + instruction.getX();
+        return position.profondeur + instruction.getX();
     }
 }
