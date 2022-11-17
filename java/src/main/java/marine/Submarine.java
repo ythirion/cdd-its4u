@@ -15,6 +15,7 @@ public class Submarine {
                                                                                                                                                     this.object = new Objet(horizontal, depth);
     }
 
+    @Deprecated
     public void méthode1(List<Instruction> instructions) {
         instructions.forEach(this::méthode2);
     }
