@@ -4,10 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
-@Getter
 public class Instruction {
-    public final String text;
-    private final int x;
+    public String text;
+    public int x;
 
     public static Instruction fromText(String text) {
         var split = text.split(" ");

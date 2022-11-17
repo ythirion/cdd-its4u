@@ -17,16 +17,16 @@ public class Submarine {
     }
 
     private void move(Instruction instruction) {
-        if ("down".equals(instruction.getText())) {
+        if ("down".equals(instruction.text)) {
             position = position.withProfondeur(calculateDepth(instruction));
-        } else if ("up".equals(instruction.getText())) {
-            position = position.withProfondeur(position.profondeur - instruction.getX());
+        } else if ("up".equals(instruction.text)) {
+            position = position.withProfondeur(position.profondeur - instruction.x);
         } else {
-            position = position.withHorizontal(position.horizontal + instruction.getX());
+            position = position.withHorizontal(position.horizontal + instruction.x);
         }
     }
 
     private int calculateDepth(Instruction instruction) {
-        return position.profondeur + instruction.getX();
+        return position.profondeur + instruction.x;
     }
 }
